@@ -1,0 +1,29 @@
+.nav {
+  .navbar-title {
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    i {
+      color: rgb(204, 200, 200);
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0;
+      li {
+        a {
+          margin: 0 15px;
+          text-decoration: none;
+          color: black;
+        }
+    }
+    img {
+      width: 22%;
+      padding: 15px 70px;
+    }
+
+    }
+  }
+}

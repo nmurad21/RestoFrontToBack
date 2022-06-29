@@ -1,0 +1,24 @@
+#foods{
+  height: 100%;
+  .slider{
+    .carousel-item {
+  
+      img {
+        position: relative;
+      }
+    }
+      .sliderbuttons{
+          position: absolute;
+          right: 100px;
+          bottom: 100px;
+          .sliderbutton {
+            height: 100px;
+            width: 100px;
+            background-color: white;
+            i{
+              color: black;
+            }
+          }
+      }
+  }
+}

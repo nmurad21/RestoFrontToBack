@@ -1,0 +1,88 @@
+﻿@model Special
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+@if (Model == null)
+{
+    <div class="container">
+        <div class="row">
+            <div class="row">
+                <div class="col-lg-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Special Table</h4>
+                            <a class="btn btn-success" asp-controller="Special" asp-action="Create">Create</a>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>SubTitle</th>
+                                            <th>Price</th>
+                                            <th>Settings</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="container">
+        <div class="row">
+            <div class="row">
+                <div class="col-lg-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Special Table</h4>
+                            @if (Model == null)
+                            {
+
+                                <a class="btn btn-success" asp-controller="Special" asp-action="Create">Create</a>
+                            }
+                            else
+                            {
+                                <a class="btn btn-success" asp-controller="Special" asp-action="Index">Create</a>
+                            }
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>SubTitle</th>
+                                            <th>Price</th>
+                                            <th>Settings</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>@Model.Title</td>
+                                            <td>@Model.SubTitle</td>
+                                            <td>@Model.Price</td>
+                                            <td>
+                                                <a class="btn btn-danger" asp-controller="Special" asp-action="Delete" asp-route-id="@Model.Id"><i class="mdi mdi-delete"></i></a>
+                                                <a class="btn btn-success" asp-controller="Special" asp-action="Detail" asp-route-id="@Model.Id"><i class="mdi mdi-account-card-details"></i></a>
+                                                <a class="btn btn-primary" asp-controller="Special" asp-action="Update" asp-route-id="@Model.Id"><i class="mdi mdi-account-card-details"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+

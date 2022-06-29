@@ -1,0 +1,138 @@
+﻿@model HomeVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main>
+    <section id="foods">
+        <div class="row food">
+            <div class="col-6 food-title">
+                <div class="food-text-btn">
+                    <h1>
+                        @Html.Raw(Model.PageIntro.Text)
+                    </h1>
+                    <div class="buttons">
+                        <button class="exlporebtn" type="button">Explore Menu</button>
+                        <button class="playbtn" type="button">
+                            <i class="fa-solid fa-circle-play"></i>
+                            Play Video
+                        </button>
+                    </div>
+                </div>
+                <div class="foods-icon">
+                    <div class="delivery">
+                        <i class="fa-solid fa-jet-fighter"></i>
+                        <span>Fast Delivery</span>
+                    </div>
+                    <div class="fresh-food">
+                        <i class="fa-brands fa-envira"></i>
+                        <span>Fresh Food</span>
+                    </div>
+                    <div class="support">
+                        <i class="fa-solid fa-comment"></i>
+                        <span>24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div id="carouselExampleControls" class="carousel slide slider" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+
+                        @for (int i = 0; i < Model.Sliders.Count(); i++)
+                        {
+                            if (i == 0)
+                            {
+                                <div class="carousel-item active">
+                                    <img src="~/assets/images/slider/@Model.Sliders.ElementAt(i).ImageUrl" class="d-block w-100" alt="...">
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="carousel-item">
+                                    <img src="~/assets/images/slider/@Model.Sliders.ElementAt(i).ImageUrl" class="d-block w-100" alt="...">
+                                </div>
+                            }
+                        }
+                    </div>
+                    <div class="sliderbuttons">
+                        <button class="carousel-control-next sliderbutton" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <i class="fa-solid fa-angle-left"></i>
+
+                        </button>
+                        <button class="carousel-control-prev sliderbutton" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <i class="fa-solid fa-angle-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="welcome">
+        <div class="row resto">
+            <div class="col-6 welcome-image">
+                <img src="~/assets/images/slider/@Model.AboutImage.ImageUrl" alt="">
+            </div>
+            <div class="col-6 welcome-resto">
+                <span>@Model.AboutTitle.Name</span>
+                @Html.Raw(Model.AboutTitle.Desc)
+            <h4>Special Recipe</h4>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="australian-recipe">
+                            <div class="row">
+                                @foreach (var item in Model.AboutSpecials)
+                                {
+
+                                <div class="col-4">
+                                    <a href="">
+                                        <div class="australian">
+                                            <img src="~/assets/images/slider/@item.ImageUrl" alt="">
+                                            <h6>@Html.Raw(item.ImageText)</h6>
+                                        </div>
+                                    </a>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="special">
+        <div class="row">
+            <div class="col-12 special-name">
+                <h6>@Model.SpecialName.Name</h6>
+                <h3>@Model.SpecialName.Title</h3>
+            </div>
+        </div>
+        <div class="row specials">
+            <div class="col-1 special-number">
+                <span>
+                    01.
+                </span>
+                <div class="special-line"></div>
+            </div>
+            @if (Model.Specials == null)
+            {
+                <h1>Special yoxdur!</h1>
+            }
+            else
+            {
+                <div class="col-11 first-special">
+                    <div class="col-6 special-text">
+                        <h4> <span style="color: red;">@Model.Specials.Title</span> <br>@Model.Specials.SubTitle</h4>
+                        <p>@Model.Specials.Text</p>
+                        <span>$@Model.Specials.Price</span>
+                        <button>Book A Table</button>
+                    </div>
+                    <div class="col-5">
+                        <img style="width: 100%; " src="~/assets/images/special/@Model.Specials.ImageUrl" alt="">
+                    </div>
+                </div>
+            }
+
+        </div>
+    </section>
+</main>
+

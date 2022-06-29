@@ -1,0 +1,43 @@
+#special{
+    align-items: center;
+    .special-name{
+        justify-content: center;
+        text-align: center;
+        h6{
+            color: red;
+        }
+    }
+    .special-number{
+        display: flex;
+        span{
+            font-size: 70px;
+            font-weight: 700;
+        }
+        .special-line{
+            height: 2px;
+            width: 150px;
+            background-color: black;
+        }
+        
+    }
+    .specials{
+        margin-top: 3rem;
+
+        .first-special{
+            display: flex;
+            align-items: center;
+            .special-text{
+                button{
+                    display: block;
+                    border: none;
+                    border-radius: 15px;
+                    background-color: red;
+                    color: white;
+                    padding: 6px 25px;
+                    margin-top: 10px;
+                }
+            }
+
+        }
+    }
+}

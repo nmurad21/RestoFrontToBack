@@ -1,0 +1,59 @@
+#foods{
+    .food{
+        align-items: center;
+        .food-title{
+            .food-text-btn{
+                height: 300px;
+                align-items: center;
+                justify-content: space-between;
+                h1{
+                    font-size: 60px;
+                }
+                .buttons{
+                    margin-top: 30px;
+                    .exlporebtn{
+                        border: none;
+                        border-radius: 15px;
+                        padding: 4px 16px;
+                        background-color: rgb(255, 0, 0);
+                        color: white;
+                        &:hover{
+                            background-color: rgba(255, 0, 0, 0.842);
+                            transition: 0.4s;
+                        }
+                    }
+                    .playbtn{
+                        border: none;
+                        background-color: transparent;
+                        &:hover{
+                            color: rgb(255, 0, 0);
+                            transition: 0.4s;
+                        }
+                    }
+                }
+            }
+            .foods-icon{
+                display: flex;
+                text-align: center;
+                font-size: 20px;
+                .delivery{
+                    padding: 15px;
+                }
+                .fresh-food{
+                    padding: 15px;
+                    border-left: 1px rgb(160, 157, 157);
+                    border-right: 1px rgb(211, 211, 211);
+                }
+                .support{
+                    padding: 15px;
+                }
+                span{
+                    display: block;
+                }
+                i{
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}
